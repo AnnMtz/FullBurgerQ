@@ -1,0 +1,95 @@
+<div class="title">
+  <h1>{{title}}</h1>
+  <p>{{text}}</p>
+</div>
+<div class="buttons">
+  <button (click)="mostrarDesayuno = !mostrarDesayuno">Desayuno</button>
+  <button (click)="mostrarComida = !mostrarComida">ALMUERZO Y CENA</button>
+</div>
+<div class="container">
+  <div class="food">
+      <div *ngIf="mostrarDesayuno" class="card border-primary mb-3 ml-5 mr-5" id="breakfast-card">
+          <div class="card-header">Desayuno</div>
+          <div class="card-body text-primary">
+              <div class="list">
+                  <form #menuForm="ngForm" (ngSubmit)="onSubmit(menuForm)">
+                      <p id="cliente">
+                          <label for="cliente">Nombre del cliente</label>
+                          <input type="text" name="cliente" id="client" #cliente="ngModel" [(ngModel)]="menu.cliente" required />
+                          <span class="required" *ngIf="cliente.touched && !cliente.valid">El nombre del cliente es obligatorio</span>
+                      </p>
+                      <p>
+                          <label for="cafeAmericano">Café americano</label>
+                          <input type="number" name="cafeAmericano" #cafeAmericano="ngModel" [(ngModel)]="menu.cafeAmericano" />
+                      </p>
+                      <p>
+                          <label for="cafeConLeche">Café con leche</label>
+                          <input type="number" name="cafeConLeche" #cafeConLeche="ngModel" [(ngModel)]="menu.cafeConLeche" />
+                      </p>
+                      <p>
+                          <label for="sandwich">Sandwich de jamón y queso</label>
+                          <input type="number" name="sandwich" #sandwich="ngModel" [(ngModel)]="menu.sandwich" />
+                      </p>
+                      <p>
+                          <label for="jugo">Jugo</label>
+                          <input type="number" name="jugo" #jugo="ngModel" [(ngModel)]="menu.jugo" />
+                      </p>
+                      <input type="submit" value="Enviar" [disabled]="!menuForm.form.valid" />
+                  </form>
+              </div>
+          </div>
+      </div>
+      <div *ngIf="mostrarComida && !mostrarDesayuno" class="card border-primary mb-3 ml-5 mr-5">
+          <div class="card-header">Almuerzo y cena</div>
+          <div class="card-body text-primary">
+              <div class="list">
+                  <form #menuForm="ngForm" (ngSubmit)="onSubmit(menuForm)">
+                      <p id="cliente">
+                          <label for="cliente">Nombre del cliente</label>
+                          <input type="text" name="cliente" id="client" #cliente="ngModel" [(ngModel)]="menu.cliente" required />
+                          <span class="required" *ngIf="cliente.touched && !cliente.valid">El nombre del cliente es obligatorio</span>
+                      </p>
+                      <p>
+                          <label for="hamburguesaSimple">Hamburguesa simple</label>
+                          <input type="number" name="hamburguesaSimple" #hamburguesaSimple="ngModel" [(ngModel)]="menu.hamburguesaSimple" />
+                      </p>
+                      <p>
+                          <label for="hamburguesaDoble">Hamburguesa doble</label>
+                          <input type="number" name="hamburguesaDoble" #hamburguesaDoble="ngModel" [(ngModel)]="menu.hamburguesaDoble" />
+                      </p>
+                      <p>
+                          <label for="papasFritas">Papas fritas</label>
+                          <input type="number" name="papasFritas" #papasFritas="ngModel" [(ngModel)]="menu.papasFritas" />
+                      </p>
+                      <p>
+                          <label for="onionRings">Onion rings</label>
+                          <input type="number" name="onionRings" #onionRings="ngModel" [(ngModel)]="menu.onionRings" />
+                      </p>
+                      <p>
+                          <label for="agua500ml">Agua 500 ml</label>
+                          <input type="number" name="agua500ml" #agua500ml="ngModel" [(ngModel)]="menu.agua500ml" />
+                      </p>
+                      <p>
+                          <label for="agua750ml">Agua 750ml</label>
+                          <input type="number" name="agua750ml" #agua750ml="ngModel" [(ngModel)]="menu.agua750ml" />
+                      </p>
+                      <p></p>
+                      <p>
+                          <label for="refresco500ml">Gaseosa 500ml</label>
+                          <input type="number" name="refresco500ml" #refresco500ml="ngModel" [(ngModel)]="menu.refresco500ml" />
+                      </p>
+                      <p>
+                          <label for="refresco750ml">Gaseosa 750ml</label>
+                          <input type="number" name="refresco750ml" #refresco750ml="ngModel" [(ngModel)]="menu.refresco750ml" />
+                      </p>
+                      <p>
+                          <label for="quesoOhuevo">Queso o huevo</label>
+                          <input type="number" name="quesoOhuevo" #quesoOhuevo="ngModel" [(ngModel)]="menu.quesoOhuevo" />
+                      </p>
+                      <input type="submit" id="drinks-button" value="Enviar" [disabled]="!menuForm.form.valid" />
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
