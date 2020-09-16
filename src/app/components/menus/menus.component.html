@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="title">
   <h1>{{title}}</h1>
   <p>{{text}}</p>
@@ -20,19 +21,31 @@
                       </p>
                       <p>
                           <label for="cafeAmericano">Café americano</label>
+                          <input type="text" name="cafeAmericano"  class="price" placeholder="$5"> 
                           <input type="number" name="cafeAmericano" #cafeAmericano="ngModel" [(ngModel)]="menu.cafeAmericano" />
+                          <span>Suma: {{menu.cafeAmericano*priceCA}}</span>
                       </p>
                       <p>
                           <label for="cafeConLeche">Café con leche</label>
+                          <input type="text" name="cafeConLeche" class="price ml-2" placeholder="$7">
                           <input type="number" name="cafeConLeche" #cafeConLeche="ngModel" [(ngModel)]="menu.cafeConLeche" />
+                          <span>Suma: {{menu.cafeConLeche*priceCL}}</span>
                       </p>
                       <p>
-                          <label for="sandwich">Sandwich de jamón y queso</label>
-                          <input type="number" name="sandwich" #sandwich="ngModel" [(ngModel)]="menu.sandwich" />
+                          <label for="sandwich" id="sandwich">Sandwich de jamón y queso</label>
+                          <input type="text" name="sandwich" class="price ml-2 mr-3" placeholder="$10">
+                          <input type="number" name="sandwich" class="number-type mr-2" #sandwich="ngModel" [(ngModel)]="menu.sandwich" />
+                          <span>Suma: {{menu.sandwich*priceS}}</span>
                       </p>
                       <p>
-                          <label for="jugo">Jugo</label>
+                          <label for="jugo" id="jugo">Jugo</label>
+                          <input type="text" name="jugo" class="price ml-5" placeholder="$7">
                           <input type="number" name="jugo" #jugo="ngModel" [(ngModel)]="menu.jugo" />
+                          <span>Suma: {{menu.jugo*priceJugo}}</span>
+                      </p>
+                      <p>
+                          <label for="total">Total</label>
+                          <input type="text" id="total">Total:{{menu.cafeAmericano*priceCA + menu.cafeConLeche*priceCL + menu.sandwich*priceS + menu.jugo*priceJugo}}
                       </p>
                       <input type="submit" value="Enviar" [disabled]="!menuForm.form.valid" />
                   </form>
@@ -50,41 +63,65 @@
                           <span class="required" *ngIf="cliente.touched && !cliente.valid">El nombre del cliente es obligatorio</span>
                       </p>
                       <p>
-                          <label for="hamburguesaSimple">Hamburguesa simple</label>
+                          <label for="hamburguesaSimple" class="label-menu">Hamburguesa simple</label>
+                          <input type="text" name="hamburguesaSimple" class="price" placeholder="$10">
                           <input type="number" name="hamburguesaSimple" #hamburguesaSimple="ngModel" [(ngModel)]="menu.hamburguesaSimple" />
+                          <span>Suma: {{menu.hamburguesaSimple*priceS}}</span>
                       </p>
                       <p>
-                          <label for="hamburguesaDoble">Hamburguesa doble</label>
+                          <label for="hamburguesaDoble" class="label-menu">Hamburguesa doble</label>
+                          <input type="text" name="hamburguesaDoble" class="price" placeholder="$15">
                           <input type="number" name="hamburguesaDoble" #hamburguesaDoble="ngModel" [(ngModel)]="menu.hamburguesaDoble" />
+                          <span>Suma: {{menu.hamburguesaDoble*priceHD}}</span>
                       </p>
                       <p>
-                          <label for="papasFritas">Papas fritas</label>
+                          <label for="papasFritas" class="label-menu">Papas fritas</label>
+                          <input type="text" name="papasFritas" class="price" placeholder="$5">
                           <input type="number" name="papasFritas" #papasFritas="ngModel" [(ngModel)]="menu.papasFritas" />
+                          <span>Suma: {{menu.papasFritas*priceCA}}</span>
                       </p>
                       <p>
-                          <label for="onionRings">Onion rings</label>
+                          <label for="onionRings" class="label-menu">Onion rings</label>
+                          <input type="text" name="onionRings" class="price" placeholder="$5">
                           <input type="number" name="onionRings" #onionRings="ngModel" [(ngModel)]="menu.onionRings" />
+                          <span>Suma: {{menu.onionRings*priceCA}}</span>
                       </p>
                       <p>
-                          <label for="agua500ml">Agua 500 ml</label>
+                          <label for="agua500ml" class="label-menu">Agua 500 ml</label>
+                          <input type="text" name="agua500ml" class="price" placeholder="$5">
                           <input type="number" name="agua500ml" #agua500ml="ngModel" [(ngModel)]="menu.agua500ml" />
+                          <span>Suma: {{menu.agua500ml*priceCA}}</span>
                       </p>
                       <p>
-                          <label for="agua750ml">Agua 750ml</label>
+                          <label for="agua750ml" class="label-menu">Agua 750ml</label>
+                          <input type="text" name="agua750ml" class="price" placeholder="$8">
                           <input type="number" name="agua750ml" #agua750ml="ngModel" [(ngModel)]="menu.agua750ml" />
+                          <span>Suma: {{menu.agua750ml*priceAG}}</span>
                       </p>
                       <p></p>
                       <p>
-                          <label for="refresco500ml">Gaseosa 500ml</label>
+                          <label for="refresco500ml" class="label-menu">Gaseosa 500ml</label>
+                          <input type="text" name="refresco500ml" class="price" placeholder="$7">
                           <input type="number" name="refresco500ml" #refresco500ml="ngModel" [(ngModel)]="menu.refresco500ml" />
+                          <span>Suma: {{menu.refresco500ml*priceCL}}</span>
                       </p>
                       <p>
-                          <label for="refresco750ml">Gaseosa 750ml</label>
+                          <label for="refresco750ml" class="label-menu">Gaseosa 750ml</label>
+                          <input type="text" name="refresco750ml" class="price" placeholder="$10">
                           <input type="number" name="refresco750ml" #refresco750ml="ngModel" [(ngModel)]="menu.refresco750ml" />
+                          <span>Suma: {{menu.refresco750ml*priceS}}</span>
                       </p>
                       <p>
-                          <label for="quesoOhuevo">Queso o huevo</label>
+                          <label for="quesoOhuevo" class="label-menu">Queso o huevo</label>
+                          <input type="text" name="quesoOhuevo" class="price" placeholder="$1">
                           <input type="number" name="quesoOhuevo" #quesoOhuevo="ngModel" [(ngModel)]="menu.quesoOhuevo" />
+                          <span>Suma: {{menu.quesoOhuevo*priceQH}}</span>
+                      </p>
+                      <p>
+                        <label for="total">Total</label>
+                        <input type="text" id="total">Total:{{menu.hamburguesaSimple*priceS + menu.hamburguesaDoble*priceHD 
+                            + menu.papasFritas*priceCA + menu.onionRings*priceCA + menu.agua500ml*priceCA + menu.agua750ml*priceAG 
+                            + menu.refresco500ml*priceCL + menu.refresco750ml*priceS + menu.quesoOhuevo*priceQH}}
                       </p>
                       <input type="submit" id="drinks-button" value="Enviar" [disabled]="!menuForm.form.valid" />
                   </form>

@@ -9,13 +9,18 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AppComponent } from './app.component';
 import { MenusComponent } from './components/menus/menus.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
-
+import { RegisterComponent } from './components/register/register.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenusComponent,
-    PedidosComponent
+    PedidosComponent,
+    RegisterComponent,
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

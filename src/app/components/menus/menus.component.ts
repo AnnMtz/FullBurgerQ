@@ -16,6 +16,13 @@ export class MenusComponent implements OnInit {
   public text: string;
   public menu: Menu;
   public status: boolean;
+  public priceCA: number;
+  public priceCL: number;
+  public priceS: number;
+  public priceJugo: number;
+  public priceHD: number;
+  public priceAG: number;
+  public priceQH: number;
 
   constructor(
     private _menuService: MenuService
@@ -24,6 +31,13 @@ export class MenusComponent implements OnInit {
     this.text = "Todos nuestros alimentos son únicos y de alta calidad";
     
     this.menu = new Menu('',null,null,null,null,null,null,null,null,null,null,null,null,null,'');
+    this.priceCA = 5;
+    this.priceCL = 7;
+    this.priceS = 10;
+    this.priceJugo = 7;
+    this.priceHD = 15;
+    this.priceAG = 8;
+    this.priceQH = 1;
   }
 
   ngOnInit() {

@@ -23,12 +23,71 @@
 body{
     font-family: "yanone";
     font-size: 20px;
-    background-color: #cccccc26;;
+    background-color: #cccccc26;
+}
+
+/*Register*/
+.register {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 25% 0% 34%;
+    width: 100%;
+    height: 100vh;
+    background: #ccc;
+}
+
+.container-login100{
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 55px;
+    background: #a0b6ca;
+}
+
+.login100-form-title {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.wrap-input100 {
+    margin: 15px 0px 20px 0px;
+}
+
+.input100{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.container-login100-form-btn {
+    margin-top: 10px;
+}
+
+.login100-form-btn {
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#email,
+#password{
+    margin-bottom: 15px;
+    width: 30%;
+    border-radius: 10px;
+}
+
+#register-button {
+    padding: 15px 30px 15px 30px;
+    background: #0000ff61;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 25px;
 }
 
 /*Navbar*/
 .navbar {
     background: #4700f37d;
+    overflow: hidden;
 }
 
 .navbar-brand {
@@ -59,6 +118,28 @@ body{
 }
 
 /*Menus*/
+#sandwich {
+    width: 92px;
+}
+
+#jugo {
+    width: 49px;
+}
+.price {
+    width: 35px;
+    height: 32px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+#total {
+    border: hidden;
+}
+
+.label-menu {
+    width: 45%;
+}
+
 .buttons {
     flex-direction: row;
     display: flex;
