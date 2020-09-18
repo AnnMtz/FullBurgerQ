@@ -4,8 +4,8 @@
   <p>{{text}}</p>
 </div>
 <div class="buttons">
-  <button (click)="mostrarDesayuno = !mostrarDesayuno">Desayuno</button>
-  <button (click)="mostrarComida = !mostrarComida">ALMUERZO Y CENA</button>
+  <button (click)="mostrarDesayuno = mostrarDesayuno = !mostrarDesayuno && !mostrarComida">Desayuno</button>
+  <button (click)="mostrarComida = mostrarComida = !mostrarComida && !mostrarDesayuno">ALMUERZO Y CENA</button>
 </div>
 <div class="container">
   <div class="food">
@@ -52,7 +52,7 @@
               </div>
           </div>
       </div>
-      <div *ngIf="mostrarComida && !mostrarDesayuno" class="card border-primary mb-3 ml-5 mr-5">
+      <div *ngIf="mostrarComida" class="card border-primary mb-3 ml-5 mr-5">
           <div class="card-header">Almuerzo y cena</div>
           <div class="card-body text-primary">
               <div class="list">
